@@ -11,7 +11,7 @@ export default function ContactSection() {
         and automation technologies.
       </p>
       <p className="mb-8">
-        Let's discuss how we can work together to develop innovative AI and automation solutions tailored to your specific needs.
+        Let&apos;s discuss how we can work together to develop innovative AI and automation solutions tailored to your specific needs.
       </p>
       <Button asChild>
         <Link href="mailto:cambridgeinnovationlabs@gmail.com">Get in touch</Link>

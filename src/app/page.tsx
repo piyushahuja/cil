@@ -17,7 +17,7 @@ export default function Home() {
         <ApproachSection />
         <CaseStudiesSection />
         <TeamSection />
-        <BlogSection />
+        {/* <BlogSection /> */}
         <ClientStoriesSection />
         <ContactSection />
       </main>
