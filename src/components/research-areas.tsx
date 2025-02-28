@@ -14,7 +14,7 @@ interface ResearchArea {
 const researchAreas: ResearchArea[] = [
   {
     title: "AI in Education",
-    description: "Our research focuses on developing AI systems that enhance educational experiences through personalized learning, automated feedback, and intelligent tutoring systems. We explore how large language models can be adapted to educational contexts to provide meaningful interactions and support for learners.",
+    description: "We explore how large language models can be adapted to educational contexts to provide meaningful interactions and support for learners. We currently have two systems in production: Platonia and Dialogue Moderator. ",
     image: "/edu.jpeg",
     relatedLinks: [
       {
@@ -28,24 +28,28 @@ const researchAreas: ResearchArea[] = [
     ]
   },
   {
-    title: "AI and Enteprise Data",
-    description: "Our first enterprise AI agent automates data cleaning by performing subjective evaluation and context-specific interpretation - tasks that have always require domain knowledge and human intervention. Existing tools either rigidly follow human-engineered rules or simply export data cleaning to expensive human teams. DataKleen is an intelligent, scalable, adaptive agent that integrates with legacy systems.",
+    title: "AI and Enterprise Data",
+    description: "Our enterprise AI agent automates data cleaning by performing subjective evaluation and context-specific interpretation - tasks that have always require domain knowledge and human intervention. Existing tools either rigidly follow human-engineered rules or simply export data cleaning to expensive human teams. DataKleen is an intelligent, scalable, adaptive agent that integrates with legacy systems.",
     image: "/cleaning.jpeg",
     relatedLinks: [
       {
         title: "Can Foundation Models Wrangle Your Data?",
         url: "https://arxiv.org/abs/2205.09911"
+      },
+      {
+        title: "AI Data Cleaner Demo",
+        url: "https://datakleen.com/demo//"
       }
     ]
   },
   {
     title: "Automated Theorem Proving",
-    description: "Currently in stealth .",
+    description: "Currently in stealth",
     image: "/theorem.jpg",
     relatedLinks: [
       {
         title: "Automated Theorem Proving Project",
-        url: "/case-studies/platonia"
+        url: "/case-studies/automated-theorem-proving"
       }
     ]
   }
@@ -54,7 +58,7 @@ const researchAreas: ResearchArea[] = [
 export default function ResearchAreas() {
   return (
     <section className="mb-16">
-      <h2 className="text-3xl font-semibold mb-8">Core Research Areas</h2>
+
       <div className="space-y-12">
         {researchAreas.map((area, index) => (
           <div key={area.title} className={`flex flex-col gap-8`}>
@@ -71,7 +75,7 @@ export default function ResearchAreas() {
               <p className="mb-4">{area.description}</p>
               {area.relatedLinks.length > 0 && (
                 <div>
-                  <h4 className="font-medium mb-2">Related Resources:</h4>
+                  <h4 className="font-medium mb-2">Links:</h4>
                   <ul className="list-disc pl-5">
                     {area.relatedLinks.map(link => (
                       <li key={link.title}>

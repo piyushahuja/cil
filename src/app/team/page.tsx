@@ -80,7 +80,7 @@ export default function TeamPage() {
               At Cambridge Innovation Labs, our mission is to harness AI to accelerate various sectors: enhancing educational experiences, automating time-consuming enterprise workflows, fostering mathematical discoveries, and enabling robots to perform complex tasks.
             </p>
             <a 
-              href="mailto:careers@cambridgeinnovationlabs.com" 
+              href="mailto:cambridgeinnovationlab@gmail.com" 
               className="inline-block border border-gray-300 dark:border-gray-700 px-6 py-3 font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             >
               JOIN THE TEAM →

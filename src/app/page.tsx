@@ -24,10 +24,10 @@ export default function Home() {
         <div className="container mx-auto px-4 relative z-10 text-white">
           <div className="max-w-3xl">
             <h1 className="text-5xl font-bold mb-6">
-               Cambridge Innovation Labs
+               Accelerating automation, education, and scientific discovery
             </h1>
             <p className="text-xl mb-8">
-              We are a group of researchers and engineers that specialize in novel applications of AI. Our current projects span the use of AI in education, enterprise data, automated theorem proving, and robotics. 
+              We are a team of researchers and engineers that specialize in novel applications of AI. Our current projects span the use of AI in education, enterprise data cleaning, automated theorem proving, and robotics. 
               
             </p>
             <Link 

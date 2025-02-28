@@ -3,112 +3,69 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
-import prism from 'remark-prism';
 import { BlogPost, BlogPostMeta } from '@/data/types/blog';
 import { formatDistanceToNow, parseISO } from 'date-fns';
 
-export interface BlogPost {
-  slug: string;
-  title: string;
-  date: string;
-  author: string;
-  categories: string[];
-  excerpt: string;
-  featuredImage: string;
-  content: string;
+const blogsDirectory = path.join(process.cwd(), 'src/data/blog');
+
+export function getBlogSlugs(): string[] {
+  return fs.readdirSync(blogsDirectory)
+    .filter(file => file.endsWith('.md'))
+    .map(file => file.replace(/\.md$/, ''));
 }
 
-const postsDirectory = path.join(process.cwd(), 'src/content/blog');
-
-export function getSortedPostsData(): BlogPost[] {
-  // Ensure the directory exists
-  if (!fs.existsSync(postsDirectory)) {
-    return [];
-  }
-
-  // Get file names under /posts
-  const fileNames = fs.readdirSync(postsDirectory);
-  const allPostsData = fileNames.map((fileName) => {
-    // Remove ".md" from file name to get slug
-    const slug = fileName.replace(/\.md$/, '');
-
-    // Read markdown file as string
-    const fullPath = path.join(postsDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
-
-    // Use gray-matter to parse the post metadata section
-    const matterResult = matter(fileContents);
-
-    // Combine the data with the slug
-    return {
-      slug,
-      title: matterResult.data.title || '',
-      date: matterResult.data.date || '',
-      author: matterResult.data.author || '',
-      categories: matterResult.data.categories || [],
-      excerpt: matterResult.data.excerpt || '',
-      featuredImage: matterResult.data.featuredImage || '',
-      content: matterResult.content,
-    } as BlogPost;
-  });
-
-  // Sort posts by date
-  return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
-      return 1;
-    } else {
-      return -1;
-    }
-  });
-}
-
-export function getAllPostSlugs() {
-  if (!fs.existsSync(postsDirectory)) {
-    return [];
-  }
-  
-  const fileNames = fs.readdirSync(postsDirectory);
-  return fileNames.map((fileName) => {
-    return {
-      params: {
-        slug: fileName.replace(/\.md$/, ''),
-      },
-    };
-  });
-}
-
-export async function getPostData(slug: string): Promise<BlogPost> {
-  const fullPath = path.join(postsDirectory, `${slug}.md`);
+export function getBlogPostBySlug(slug: string): BlogPost {
+  const fullPath = path.join(blogsDirectory, `${slug}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
-
-  // Use gray-matter to parse the post metadata section
-  const matterResult = matter(fileContents);
-
-  // Use remark to convert markdown into HTML string
-  const processedContent = await remark()
-    .use(html)
-    .use(prism) // For syntax highlighting
-    .process(matterResult.content);
-  const contentHtml = processedContent.toString();
-
-  // Combine the data with the slug and contentHtml
-  return {
+  const { data, content } = matter(fileContents);
+  
+  const blogPostMeta = {
     slug,
-    title: matterResult.data.title || '',
-    date: matterResult.data.date || '',
-    author: matterResult.data.author || '',
-    categories: matterResult.data.categories || [],
-    excerpt: matterResult.data.excerpt || '',
-    featuredImage: matterResult.data.featuredImage || '',
-    content: contentHtml,
+    title: data.title,
+    date: data.date,
+    author: data.author,
+    excerpt: data.excerpt,
+    coverImage: data.coverImage,
+    tags: data.tags || [],
+    readingTime: calculateReadingTime(content)
+  };
+  
+  return {
+    ...blogPostMeta,
+    content
   };
 }
 
-export function getPostsByCategory(category: string): BlogPost[] {
-  const allPosts = getSortedPostsData();
-  return allPosts.filter(post => 
-    post.categories.some(cat => cat.toLowerCase() === category.toLowerCase())
-  );
+export async function getProcessedBlogPostBySlug(slug: string): Promise<BlogPost> {
+  const post = getBlogPostBySlug(slug);
+  
+  // Process markdown content to HTML without syntax highlighting
+  const processedContent = await remark()
+    .use(html, { sanitize: false })
+    .process(post.content);
+    
+  return {
+    ...post,
+    content: processedContent.toString()
+  };
+}
+
+export function getAllBlogPosts(): BlogPostMeta[] {
+  const slugs = getBlogSlugs();
+  const posts = slugs
+    .map(slug => getBlogPostBySlug(slug))
+    .sort((post1, post2) => (new Date(post2.date).getTime() - new Date(post1.date).getTime()));
+  
+  return posts.map(post => ({
+    slug: post.slug,
+    title: post.title,
+    date: post.date,
+    author: post.author,
+    excerpt: post.excerpt,
+    coverImage: post.coverImage,
+    tags: post.tags,
+    readingTime: post.readingTime
+  }));
 }
 
 function calculateReadingTime(content: string): string {
