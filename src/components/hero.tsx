@@ -6,7 +6,7 @@ export default function Hero() {
     <section className="mb-16">
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold mb-4">Cambridge Innovation Labs</h1>
-        <p className="text-xl mb-8">AI Innovations and Automation Specialists</p>
+        <p className="text-xl mb-8">We specialize in AI-powered solutions for education and learning</p>
         <Button asChild>
           <Link href="#contact">Get in touch</Link>
         </Button>

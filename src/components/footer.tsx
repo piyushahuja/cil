@@ -27,6 +27,7 @@ export default function Footer() {
         <div className="mt-8 text-center text-sm">
           <p>&copy; 2023 Cambridge Innovation Labs. All rights reserved.</p>
         </div>
+        
       </div>
     </footer>
   )

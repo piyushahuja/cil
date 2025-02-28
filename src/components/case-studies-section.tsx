@@ -12,8 +12,8 @@ export default function CaseStudiesSection() {
         />
         <CaseStudy
           title="Platonia"
-          description="Our team created a machine learning model that predicts equipment failures in manufacturing plants, reducing downtime and maintenance costs."
-          client="Clients using this system have reported a 30% reduction in unexpected downtime and a 20% decrease in maintenance expenses."
+          description="Platonia is a learning network that uses ML algorithms to create connections based on teachable skills and learning requirements. The platform integrates with WhatsApp via a chatbot that handles user onboarding, performs skill-based matching, and automates peer introductions through natural language processing"
+          client= "Cambridge Connect"
         />
       </div>
     </section>
