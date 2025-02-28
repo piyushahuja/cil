@@ -16,7 +16,7 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     name: "Piyush Ahuja",
-    role: "CEO + FOUNDER",
+    role: "CEO, Founder",
     links: {
       twitter: "https://x.com/piyushahuja_in",
       linkedin: "https://www.linkedin.com/in/piyush-ahuja-2006041b/",
@@ -25,16 +25,8 @@ const teamMembers: TeamMember[] = [
   },
 
   {
-    name: "Prachi Pande",
-    role: "MEMBER OF TECHNICAL STAFF",
-    links: {
-      
-    }
-  },
-
-  {
     name: "Dr. Nitish Mital",
-    role: "MEMBER OF TECHNICAL STAFF",
+    role: "Member of Technical Staff",
     links: {
       linkedin: "https://www.linkedin.com/in/nitish-mital-phd-89202647/",
       website: "https://scholar.google.com/citations?user=2ckIQtoAAAAJ&hl=en"
@@ -43,7 +35,7 @@ const teamMembers: TeamMember[] = [
 
   {
     name: "Dr. Prateek Gupta",
-    role: "MEMBER OF TECHNICAL STAFF",
+    role: "Member of Technical Staff",
     links: {
       twitter: "https://x.com/pguptacs",
       linkedin: "https://www.linkedin.com/in/link2prateek/",
@@ -53,12 +45,65 @@ const teamMembers: TeamMember[] = [
 
   {
     name: "Dr. Amr Gomma",
-    role: "MEMBER OF TECHNICAL STAFF",
+    role: "Member of Technical Staff",
     links: {
       linkedin: "https://www.linkedin.com/in/amrgomaaelhady/",
       website: "https://amrgomaaelhady.github.io/"
     }
   },
+
+  {
+    name: "Prachi Pande",
+    role: "Member of Technical Staff",
+    links: {
+      
+    }
+  },
+
+  // {
+  //   name: "Harman Bhateja",
+  //   role: "Intern",
+  //   links: {
+      
+  //   }
+  // },
+
+  // {
+  //   name: "Ruturaj Dwivedy ",
+  //   role: "Intern",
+  //   links: {
+      
+  //   }
+  // },
+
+  {
+    name: "Shivanker Goel",
+    role: "Staff Software Engineer at Google, Advisor (ML & Privacy)",
+    links: {
+      linkedin: "https://www.linkedin.com/in/shivanker-goel/"
+    }
+  },
+
+  {
+    name: "Dr. Shubham Jain",
+    role: "Machine Learning Scientist at Sense Street, Advisor (ML)",
+    links: {
+      linkedin: "https://www.linkedin.com/in/shubham-jain-b1356962/",
+    }
+  },
+
+
+  {
+    name: "Dr. Rika Antonova",
+    role: "Professor at Cambridge, Advisor (Robotics)",
+    links: {
+      linkedin: "https://www.linkedin.com/in/contactrika/",
+      website: "https://contactrika.github.io/"
+    }
+  },
+
+
+ 
 ];
 
 export default function TeamPage() {
