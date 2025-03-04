@@ -76,31 +76,31 @@ const teamMembers: TeamMember[] = [
   //   }
   // },
 
-  {
-    name: "Shivanker Goel",
-    role: "Staff Software Engineer at Google, Advisor (ML & Privacy)",
-    links: {
-      linkedin: "https://www.linkedin.com/in/shivanker-goel/"
-    }
-  },
+  // {
+  //   name: "Shivanker Goel",
+  //   role: "Staff Software Engineer at Google, Advisor (ML & Privacy)",
+  //   links: {
+  //     linkedin: "https://www.linkedin.com/in/shivanker-goel/"
+  //   }
+  // },
 
-  {
-    name: "Dr. Shubham Jain",
-    role: "Machine Learning Scientist at Sense Street, Advisor (ML)",
-    links: {
-      linkedin: "https://www.linkedin.com/in/shubham-jain-b1356962/",
-    }
-  },
+  // {
+  //   name: "Dr. Shubham Jain",
+  //   role: "Machine Learning Scientist at Sense Street, Advisor (ML)",
+  //   links: {
+  //     linkedin: "https://www.linkedin.com/in/shubham-jain-b1356962/",
+  //   }
+  // },
 
 
-  {
-    name: "Dr. Rika Antonova",
-    role: "Professor at Cambridge, Advisor (Robotics)",
-    links: {
-      linkedin: "https://www.linkedin.com/in/contactrika/",
-      website: "https://contactrika.github.io/"
-    }
-  },
+  // {
+  //   name: "Dr. Rika Antonova",
+  //   role: "Professor at Cambridge, Advisor (Robotics)",
+  //   links: {
+  //     linkedin: "https://www.linkedin.com/in/contactrika/",
+  //     website: "https://contactrika.github.io/"
+  //   }
+  // },
 
 
  

@@ -37,7 +37,7 @@ const newsItems: NewsItem[] = [
     title: "Our team wins the Grand Prize in London AI Interpretibility Hackathon",
     date: "2025-01-18",
     source: "Society for Technological Advancement",
-    excerpt: "They made an agent system work for automatic interpretations of neurons.",
+    excerpt: "We made an LLM agent that automated interpretability research. Our multimodal agent came up with better and better hypotheses iteratively using vision language models, generated synthetic data using diffusion models, edited images using pix2pix models, and then confirmed or discomfired its own hypotheses, describing the result using LLMs. We built on top of this fascinating paper - https://lnkd.in/eSCjz6Ax, reducnpmed confirmation bias using two different LLMs (Gemini and OpenAI) to have diversity of opinion, and by training a sparse autoencoder to map a polysemantic neuron to a monosemantic one, we eased the LLM agent's task of interpreting them",
     url: "https://www.linkedin.com/feed/update/urn:li:activity:7287150457280450561/",
     image: "/sota.jpg",
     type: "media"
